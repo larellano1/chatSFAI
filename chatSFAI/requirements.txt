@@ -22,7 +22,6 @@ jmespath==1.0.1
 joblib==1.2.0
 lxml==4.9.2
 multidict==6.0.4
-nltk==3.8.1
 openai==0.26.1
 packaging==23.0
 parsel==1.7.0
