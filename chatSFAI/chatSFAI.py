@@ -1,7 +1,8 @@
 import openai
+import time
 
 # Apply your OpenAI API Key
-openai.api_key = "<MY API KEY>"
+openai.api_key = "<My API Key>"
 
 #Base knowledge
 
@@ -11,13 +12,16 @@ print(response["choices"][0]["text"])
 
 data_file = "data.json"
 informacao = open(data_file).read()
-chunk_size = 4000
+chunk_size = 7000
 informacao_chunks = [informacao[i:i+chunk_size] for i in range(0, len(informacao), chunk_size)]
 
 # Loop through each chunk and make an API call
+i = 0
 for chunk in informacao_chunks:
+    i = i + 1
     response = openai.Completion.create(engine="text-davinci-002", prompt=chunk)
-    print(response["choices"][0]["text"])
+    time.sleep(1.5)
+    print(f"Chunk: {i}/{len(informacao_chunks)}")
 
 #Question
 question = f"\nComo faço uma senha web?"
