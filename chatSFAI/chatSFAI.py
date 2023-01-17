@@ -4,7 +4,7 @@ nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 
 # Apply your OpenAI API Key
-openai.api_key = "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"
+openai.api_key = "<MY API KEY>"
 
 #Base knowledge
 
